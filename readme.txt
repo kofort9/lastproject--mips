@@ -1,5 +1,5 @@
-#Kofi Fort
-# https://github.com/kofort9/project3--mips
+# Kofi Fort
+# https://github.com/kofort9/lastproject--mips
 
 .data 
   emptyMessage: .asciiz "Input is empty."
@@ -8,6 +8,7 @@
   userInput: .space 60
   
 .text  
+
   main:
    li $v0, 8
    la $a0, userInput
@@ -98,6 +99,7 @@
   convertString:
    lb $s4, 0($a0)
    beqz $s4, displayResult
+   beq $s4, $t1, displayResult
    slti $t6, $s4, 58
    bne $t6, $zero, Nums
    slti $t6, $s4, 82
@@ -155,10 +157,10 @@
    mflo $s7
    add $t7, $t7, $s7
    
- displayresult:
-  li $v0, 1
-  move $a0, $t7
-  syscall  
+  displayResult:
+   li $v0, 1
+   move $a0, $t7
+   syscall  
     
   exit:
     li $v0, 10
