@@ -6,23 +6,11 @@
   
 .text  
 
-  main: # gets input for program
+  main:
    li $v0, 8
    la $a0, userInput
-   li $a1, 1000
+   li $a1, 60
    syscall
-   add $t0, $zero, 0 
-   add $t1, $zero, 0
-
-   la $t2, userInput #load string to register $t2
-   lb $t0, 0($t2)
-   beq $t0, 10, emptyError
-   beq $t0, 0 empty Error
-
-   addi $s0, $0, 28 # base-N number
-   addi $t3, $0, 1 # new registers
-   addi $t4, $0, 0
-   addi $t5, $0, 0
  
   removeLeadingSpace:
    li $t8, 32
