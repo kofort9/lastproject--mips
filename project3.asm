@@ -2,7 +2,7 @@
   emptyMessage: .asciiz "Input is empty." # message that is displayed if string is empty 
   lengthMessage: .asciiz "Input is too long." # message that is displayed if string is too long
   baseErrorMessage: .asciiz "Invalid base-28 number." # message that is displayed if characters are not in set
-  userInput: .space 1000
+  userInput: .space 60
   
 .text  
 
